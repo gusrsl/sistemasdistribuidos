@@ -1,0 +1,33 @@
+ion-toolbar {
+    --background: var(--primary-color);
+    --color: #fff;
+    --border-color: var(--primary-color);
+    --text-color: #fff;
+}
+
+ion-menu-button {
+    --color: #ffffff;
+    margin: auto;
+}
+
+ion-icon.notifications-circle-outline {
+    --color: #ffffff;
+    margin: auto;
+    width: auto;
+}
+
+.example-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+.logo-head {
+        width: 2rem;
+}
+    
+
+
+
+

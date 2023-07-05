@@ -1,0 +1,88 @@
+<app-header [datos]="this.datos"></app-header>
+
+
+<!-- <ion-toolbar>
+	<ion-grid>
+		<ion-row>
+			<ion-col size="8" class="col-cont-center">
+				<ion-searchbar mode="ios" style="padding:0px" (ionInput)="updateFilter($event)"
+					[(ngModel)]="palabra_buscar" placeholder="Nombre o Identificación">
+				</ion-searchbar>
+			</ion-col>
+			<ion-col size="4" class="col-cont-center">
+				<ion-chip class="bg-primary txt-white">
+					<ion-icon color="light" name="search"></ion-icon>
+					<ion-label>BUSCAR</ion-label>
+				</ion-chip>
+			</ion-col>
+			<ion-col size="12" class="col-btn">
+				<ion-button (click)="modalCreateClient(null,null)" expand="block" color="secondary" shape="round">
+					<ion-icon slot="start" class="txt-white" name="add"></ion-icon>
+					Crear Servicio
+				</ion-button>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-toolbar>
+
+<ion-content class="ion-padding">
+	<ion-list>
+		<ion-item *ngFor='let servicios of servicios ; let i = index' (click)="openOptions(servicios, i)">
+			<ion-label>
+				<h2>{{ servicios.razon_social }}</h2>
+				<p>{{ servicios.servicio }}</p>
+			</ion-label>
+		</ion-item>
+	</ion-list>
+</ion-content> -->
+
+<ion-content>
+    <form #retiroForm="ngForm" (ngSubmit)="createRetiro(retiroForm)">
+    <ion-card>
+      <ion-card-content>
+      <ion-grid>
+        <ion-row>
+        <ion-col class="center"  size="12">
+          <ion-item>
+          <ion-label position="floating">Monto</ion-label>
+          <ion-input type="number" min="0"  id="monto" name="monto" #monto="ngModel" [(ngModel)]="retiro.monto"></ion-input>
+          </ion-item>
+        </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="center"  size="12">
+            <ion-item>
+            <ion-label position="floating">Descripción</ion-label>
+            <ion-input type="text"  id="descripcion" name="descripcion" #descripcion="ngModel" [(ngModel)]="retiro.descripcion" ></ion-input>
+            </ion-item>
+          </ion-col>
+          </ion-row>
+        <ion-row>
+        <ion-col class="center" size="6">
+          <ion-button expand="full" (click)="disminuirCantidad()">
+          <ion-icon name="arrow-back-outline" color="white"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col class="center" size="6">
+          <ion-button expand="full" (click)="aumentarCantidad()">
+          <ion-icon name="arrow-forward-outline" color="white"></ion-icon>
+          </ion-button>
+        </ion-col>
+        </ion-row>
+        <ion-row>
+        <ion-col class="center" size="12">
+          <ion-button expand="full" type="submit">Retirar</ion-button>
+        </ion-col>
+        </ion-row>
+      </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    </form>
+    </ion-content>
+
+
+<ion-footer>
+	<ion-toolbar class="tool-footer">
+		<ion-img class="banner-head-logo" src="https://i.postimg.cc/9M82C1zN/logoazul.png"></ion-img>
+	</ion-toolbar>
+</ion-footer>

@@ -1,0 +1,63 @@
+<app-header [datos]="this.datos"></app-header>
+
+<ion-content>
+
+	<form [formGroup]="clientForm" (ngSubmit)="customerForm(clientForm.value)" style="padding-left: 10px; padding-right: 10px">
+		<ion-grid fixed>
+			<ion-input type="hidden" formControlName="id"></ion-input>
+			<ion-row>
+				<ion-col size="12">
+					<ion-item>
+						<ion-label class="font-w">Tipo de identificación <span class="txt-danger">*</span></ion-label>
+						<ion-select formControlName="tipo_identificacion_id" mode="ios" ok-text="Seleccionar" cancel-text="Cancelar">
+							<ion-select-option *ngFor="let sel of tipo_identificacion_array" [value]="sel.id">{{ sel.name }}</ion-select-option>
+						</ion-select>
+					</ion-item>
+				</ion-col>
+				<ion-col size="12">
+					<ion-item>
+						<ion-label class="font-w" position="floating">Identificación <span class="txt-danger">*</span></ion-label>
+						<ion-input type="text" placeholder="Ingresar identificación" formControlName="identificacion">
+						</ion-input>
+					</ion-item>
+				</ion-col>
+				<ion-col size="12">
+					<ion-item>
+						<ion-label class="font-w" position="floating">Razón social <span class="txt-danger">*</span></ion-label>
+						<ion-input type="text" placeholder="Ingresar razon social" formControlName="razon_social"></ion-input>
+					</ion-item>
+				</ion-col>
+				<ion-col size="12">
+					<ion-item>
+						<ion-label position="floating">Correo</ion-label>
+						<ion-input type="email" placeholder="Ingresar correo electrónico" formControlName="email"></ion-input>
+					</ion-item>
+				</ion-col>
+				<ion-col size="12">
+					<ion-item>
+						<ion-label position="floating">Teléfono</ion-label>
+						<ion-input type="number" placeholder="Ingresar teléfono" formControlName="telefono"></ion-input>
+					</ion-item>
+				</ion-col>
+				<ion-col size="12">
+					<ion-item>
+						<ion-label position="floating">Dirección</ion-label>
+						<ion-input type="text" placeholder="Ingresar identificación" formControlName="direccion"></ion-input>
+					</ion-item>
+				</ion-col>
+				<ion-col size="12">
+					<ion-item>
+						<ion-label class="font-w">Tipo persona <span class="txt-danger">*</span></ion-label>
+						<ion-select formControlName="tipo_persona" mode="ios" ok-text="Seleccionar" cancel-text="Cancelar">
+							<ion-select-option *ngFor="let sel of tipo_persona_array" [value]="sel.id">{{ sel.name }}</ion-select-option>
+						</ion-select>
+					</ion-item>
+				</ion-col>
+				<ion-col size="12">
+					<ion-button type="submit" expand="block" fill="clear" [disabled]="!clientForm.valid" class=" btn btn-primary">Guardar</ion-button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</form>
+
+</ion-content>

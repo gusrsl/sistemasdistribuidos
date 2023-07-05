@@ -1,0 +1,31 @@
+<ion-header>
+	<ion-toolbar class="ion-no-border">
+		<ion-buttons slot="start">
+			<ion-button *ngIf="datos.back" (click)="goBack()">
+				<ion-icon color="light" name="arrow-back-outline"></ion-icon>
+			</ion-button>
+			<ion-button style="pointer-events: none;" *ngIf="this.avatar!==''">
+				
+
+					<img class="logo-head" alt="logo" src="{{avatar}}">
+
+			
+			</ion-button>
+		</ion-buttons>
+
+		<ion-title>{{this.datos.titulo}}</ion-title>
+
+		
+		<ion-buttons *ngIf="datos.menu" slot="end">
+			<ion-menu-button style="font-size: 7vw;" autoHide="false"></ion-menu-button>
+		</ion-buttons>
+
+		
+
+	</ion-toolbar>
+
+	
+
+
+
+</ion-header>

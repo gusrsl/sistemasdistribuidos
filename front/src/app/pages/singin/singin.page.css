@@ -1,0 +1,101 @@
+ion-content {
+  --ion-background-color: #e1eaf0 !important;
+}
+
+ion-header {
+  position: absolute;
+  --ion-background-color: #e1eaf0 !important;
+}
+
+/* .banner-head {
+  background-color: #e1eaf0 !important;
+  opacity: 100;
+  width: 120%;
+} */
+
+.banner-footer-logo {
+  width: 90%;
+  margin: auto;
+  margin-top: 3%;
+}
+
+.banner-head-logo {
+  width: 90%;
+  margin: auto;
+  margin-top: 3%;
+}
+
+ion-toolbar {
+  --ion-background-color: transparent !important;
+  --opacity: 0 !important;
+}
+
+.warpform {
+  margin-top: 70px !important;
+}
+
+ion-item ion-input {
+  color: #647b9d !important;
+}
+
+.password-forgot {
+  text-align: right;
+}
+.password-forgot ion-button {
+  font-size: 12px;
+}
+
+ion-card {
+  --ion-background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.login-title {
+  text-align: center;
+}
+
+.login-title-header {
+  text-align: center;
+  color: #e1eaf0;
+  margin-top: 10%;
+  font-size: 180%;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.register {
+  text-align: center;
+  margin: auto;
+  margin-left: 17%;
+  font-size: 120%;
+}
+
+.banner-head-logo {
+  width: 25%;
+  margin: auto;
+}
+
+.tool-footer {
+  background-color: #e1eaf0;
+}
+
+.footer-button {
+  border-radius: 40%;
+  background-color: #1a8bd6;
+}
+
+.inner-scroll scroll-y{
+  overflow:hidden;
+}
+
+ion-menu{
+  overflow:hidden;
+  display: none;
+}
+
+
+
+.icone {
+  color: #000000;
+  width: 3%;
+  margin-top: 0%;
+}/*# sourceMappingURL=singin.page.css.map */

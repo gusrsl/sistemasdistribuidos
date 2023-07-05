@@ -1,0 +1,79 @@
+<ion-header>
+	<ion-toolbar class="ion-no-border">
+		<ion-buttons slot="start">
+			<ion-button *ngIf="datos.back" (click)="goBack()">
+				<ion-icon color="light" name="arrow-back-outline"></ion-icon>
+			</ion-button>
+			<ion-button style="pointer-events: none;" *ngIf="this.avatar!==''">
+				
+
+					<img class="logo-head" alt="logo" src="https://i.ibb.co/1rBHJvp/Only-logo-House.png">
+
+			
+			</ion-button>
+		</ion-buttons>
+
+		<ion-buttons   slot="end">
+			<ion-icon (click)="openNotifications()" style="font-size: 10vw;" autoHide="false" color="light" name="notifications-circle-outline"></ion-icon>
+		</ion-buttons>
+
+		<ion-title>{{this.datos.titulo}}</ion-title>
+
+		
+		<ion-buttons *ngIf="datos.menu" slot="end">
+			<ion-menu-button style="font-size: 7vw;" autoHide="false"></ion-menu-button>
+		</ion-buttons>
+
+		
+
+	</ion-toolbar>
+
+	
+
+
+
+</ion-header>
+
+<ion-content>
+
+	<form [formGroup]="reservaForm" (ngSubmit)="customerForm(reservaForm)" style="padding-left: 10px; padding-right: 10px">
+		<ion-grid fixed>
+	
+			<ion-row>
+			
+				<ion-col size="12">
+					<ion-item>
+						<ion-label class="font-w" position="floating">Titulo: <span class="txt-danger">*</span></ion-label>
+						<ion-input type="text" placeholder="" formControlName="razon_social"></ion-input>
+					</ion-item>
+				</ion-col>
+
+				
+				<ion-col size="12">
+					<ion-item>
+            <ion-textarea
+              placeholder="Escriba su sugerencia aqui!"
+              [autoGrow]="true"
+              autosize="true"
+              value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tellus sem, auctor ."
+            >
+            </ion-textarea> 
+          </ion-item>
+				</ion-col>
+
+        <ion-col size="12">
+					<ion-button type="submit" expand="block" fill="clear" [disabled]="!reservaForm.valid" class=" btn btn-primary">Guardar</ion-button>
+				</ion-col>
+
+			</ion-row>
+		</ion-grid>
+	</form>
+
+</ion-content>]
+
+<ion-footer>	
+	<ion-toolbar class="tool-footer">	
+		<ion-img class="banner-head-logo" src="https://i.ibb.co/sPVsZDj/Only-Logo-Urb.png"></ion-img>
+	</ion-toolbar>
+</ion-footer>
+

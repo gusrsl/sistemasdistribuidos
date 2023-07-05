@@ -1,0 +1,35 @@
+<ion-footer style="margin: auto; color: #3659A9;">
+  <ion-toolbar style="color: #3659A9;">
+    <ion-tabs>
+      <ion-router-outlet></ion-router-outlet>
+    
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="home">
+          
+          <ion-buttons>
+            <ion-button *ngIf="datos.back" >
+              <ion-icon color="light" name="arrow-back-outline"></ion-icon>
+            </ion-button>
+            <ion-button style="pointer-events: none;" >
+              
+
+                <img  src="{{avatar}}">
+
+            
+            </ion-button>
+          </ion-buttons>
+
+        </ion-tab-button>
+        
+        <ion-tab-button tab="library">
+        </ion-tab-button>
+        <ion-tab-button >
+          Version 0.0.1
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+      
+      
+
+</ion-toolbar>
+</ion-footer>

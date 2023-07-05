@@ -1,0 +1,22 @@
+ion-avatar.av-home {
+  --border-radius: 4px;
+  margin: auto;
+  margin-top: 15%;
+}
+
+.banner-head {
+  background-color: transparent !important;
+  opacity: 100;
+  width: 110%;
+  margin-top: -1%;
+}
+
+.saldo-label {
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.saldo-value {
+  font-size: 20px;
+}/*# sourceMappingURL=home.page.css.map */

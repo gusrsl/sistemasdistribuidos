@@ -1,0 +1,69 @@
+<app-header [datos]="this.datos"></app-header>
+
+
+
+	<ion-content class="ion-padding" [fullscreen]="true" mode="ios">
+    <form #trasnferenciaForm="ngForm" (ngSubmit)="createTransferencia(trasnferenciaForm)">
+			<ion-card>
+			  <ion-card-content>
+				<ion-grid>
+				  <ion-row>
+					<ion-col class="center" size="12">
+					  <ion-item>
+              <ion-label position="floating">Nombre</ion-label>
+              <ion-select id="id_usuario" name="id_usuario" #id_usuario="ngModel" [(ngModel)]="transferencia.id_usuario">
+                <ng-container *ngFor="let usuario of usuarios">
+                  <div *ngIf="usuario._id !== identity._id">
+                    <ion-select-option [value]="usuario._id">
+                      {{ usuario.nombres }}
+                    </ion-select-option>
+                  </div>
+                </ng-container>
+              </ion-select>
+            </ion-item>
+					</ion-col>
+				  </ion-row>
+				  <ion-row>
+					<ion-col class="center" size="12">
+					  <ion-item>
+						<ion-label position="floating">Cantidad</ion-label>
+						<ion-input type="number" min="0"  id="monto" name="monto" #monto="ngModel" [(ngModel)]="transferencia.monto"></ion-input>
+					  </ion-item>
+					</ion-col>
+				  </ion-row>
+          <ion-row>
+            <ion-col class="center"  size="12">
+              <ion-item>
+              <ion-label position="floating">Descripción</ion-label>
+              <ion-input type="text"  id="descripcion" name="descripcion" #descripcion="ngModel" [(ngModel)]="transferencia.descripcion" ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+				  <ion-row>
+					<ion-col class="center" size="6">
+					  <ion-button expand="full" (click)="disminuirCantidad()">
+						<ion-icon name="arrow-back-outline" color="white"></ion-icon>
+					  </ion-button>
+					</ion-col>
+					<ion-col class="center" size="6">
+					  <ion-button expand="full" (click)="aumentarCantidad()">
+						<ion-icon name="arrow-forward-outline" color="white"></ion-icon>
+					  </ion-button>
+					</ion-col>
+				  </ion-row>
+				  <ion-row>
+					<ion-col class="center" size="12">
+					  <ion-button expand="full" type="submit">Enviar</ion-button>
+					</ion-col>
+				  </ion-row>
+				</ion-grid>
+			  </ion-card-content>
+			</ion-card>
+    </form>
+	</ion-content>
+
+	<ion-footer>
+		<ion-toolbar class="tool-footer">
+			<ion-img class="banner-head-logo" src="https://i.postimg.cc/9M82C1zN/logoazul.png"></ion-img>
+		</ion-toolbar>
+	</ion-footer>

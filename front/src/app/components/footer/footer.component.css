@@ -1,0 +1,24 @@
+ion-toolbar {
+  --background: var(--primary-color);
+  --color: #fff;
+  --border-color: var(--primary-color);
+  --text-color: #fff;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+ion-menu-button {
+  --color: #ffffff;
+  margin: auto;
+}
+
+ion-icon.notifications-circle-outline {
+  --color: #ffffff;
+  margin: auto;
+}
+
+.example-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}/*# sourceMappingURL=footer.component.css.map */

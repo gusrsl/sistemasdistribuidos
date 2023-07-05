@@ -1,0 +1,41 @@
+<app-header [datos]="this.datos"></app-header>
+
+<ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+</ion-refresher>
+
+<ion-toolbar>
+	<ion-grid>
+		<ion-row>
+			<ion-col size="12" class="col-btn-right">
+				<ion-button (click)="modalCreateClient(null,null)" expand="block" color="success" shape="round">
+					<ion-icon slot="start" class="txt-white" name="add"></ion-icon>
+					Crear Cliente
+				</ion-button>
+			</ion-col>
+			<ion-col size="8" class="col-cont-center">
+				<ion-searchbar mode="ios" style="padding:0px" (ionInput)="updateFilter($event)"
+					[(ngModel)]="palabra_buscar" placeholder="Nombre o Identificación">
+				</ion-searchbar>
+			</ion-col>
+			<ion-col size="4" class="col-cont-center">
+				<ion-chip class="bg-primary txt-white">
+					<ion-icon color="light" name="search"></ion-icon>
+					<ion-label>BUSCAR</ion-label>
+				</ion-chip>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-toolbar>
+
+<ion-content class="ion-padding">
+	<ion-list>
+		<ion-item *ngFor='let client of clients ; let i = index' (click)="openOptions(client, i)">
+			<ion-label>
+				<h2>{{ client.razon_social }}</h2>
+				<p>{{ client.identificacion }}</p>
+			</ion-label>
+		</ion-item>
+	</ion-list>
+</ion-content>
+

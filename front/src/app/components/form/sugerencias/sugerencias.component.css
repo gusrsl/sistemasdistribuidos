@@ -1,0 +1,36 @@
+ion-toolbar {
+  --background: var(--primary-color);
+  --color: #fff;
+  --border-color: var(--primary-color);
+  --text-color: #fff;
+}
+
+ion-menu-button {
+  --color: #ffffff;
+  margin: auto;
+}
+
+ion-icon.notifications-circle-outline {
+  --color: #ffffff;
+  margin: auto;
+}
+
+.example-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.logo-head {
+  width: 5rem;
+}
+
+.banner-head-logo {
+  width: 25%;
+  margin: auto;
+}
+
+.tool-footer {
+  --background:var(--color);
+}/*# sourceMappingURL=sugerencias.component.css.map */

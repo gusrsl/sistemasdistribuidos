@@ -1,0 +1,70 @@
+<ion-header class="ion-no-border">
+	<ion-toolbar>
+		<ion-text>
+			<p style="text-align: center; font-family:fantasy; font-size: 150%; color: aliceblue;">Banco JDK</p>
+		</ion-text>
+	</ion-toolbar>
+</ion-header>
+
+<ion-menu>
+
+</ion-menu>
+
+<ion-content>
+
+	<ion-img class="banner-head" src="https://i.postimg.cc/90c8KdVz/login-header1.png"></ion-img>
+	<ion-title class="login-title">Registro de usuario</ion-title>
+	<ion-card-content class="formulario-content">
+		<form #registerForm="ngForm" (ngSubmit)="registerUser(registerForm)">
+			<ion-item>
+				<ion-label position="floating">Ingresar Nombres</ion-label>
+				<ion-input type="text" id="nombres" name="nombres" #nombres="ngModel" [(ngModel)]="user.nombres"></ion-input>
+			</ion-item>
+      <ion-item>
+				<ion-label position="floating">Ingresar Apellidos</ion-label>
+				<ion-input type="text" id="apellidos" name="apellidos" #apellidos="ngModel" [(ngModel)]="user.apellidos"></ion-input>
+			</ion-item>
+      <ion-item>
+				<ion-label position="floating">Ingresar Email</ion-label>
+				<ion-input type="text" id="email" name="email" #email="ngModel" [(ngModel)]="user.email"></ion-input>
+			</ion-item>
+      <ion-item>
+				<ion-label position="floating">Ingresar Password</ion-label>
+				<ion-input type="password" id="password" name="password" #password="ngModel" [(ngModel)]="user.password"></ion-input>
+			</ion-item>
+      <ion-item>
+				<ion-label position="floating">Ingresar telefono</ion-label>
+				<ion-input type="text" id="telefono" name="telefono" #telefono="ngModel" [(ngModel)]="user.telefono"></ion-input>
+			</ion-item>
+      <ion-item>
+				<ion-label position="floating">Ingresar Direccion</ion-label>
+				<ion-input type="text" id="direccion" name="direccion" #direccion="ngModel" [(ngModel)]="user.direccion"></ion-input>
+			</ion-item>
+			<br>
+			<ion-button type="submit" expand="block" fill="clear"  class="btn-primary">
+				Continuar </ion-button>
+		</form>
+	</ion-card-content>
+
+</ion-content>
+
+<!-- <ion-footer>
+	<ion-toolbar class="tool-footer">
+      <ion-icon  class="icone" color="dark" name="chevron-back-circle-outline"></ion-icon>
+		<ion-img class="banner-head-logo" src="https://i.postimg.cc/9M82C1zN/logoazul.png"></ion-img>
+	</ion-toolbar>
+</ion-footer> -->
+
+
+<ion-footer>
+  <ion-toolbar style="background-color: aliceblue;">
+    <ion-buttons slot="start" >
+      <ion-back-button defaultHref=""  (click)="goToNextPage2()"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title slot="end">
+      <img src="https://i.postimg.cc/9M82C1zN/logoazul.png" alt="Logo" width="50" height="50">
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
+

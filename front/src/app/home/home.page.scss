@@ -1,0 +1,46 @@
+ion-avatar.av-home {
+    --border-radius: 4px;
+    margin: auto;
+    margin-top: 15%;
+  }
+
+
+  .banner-head {
+    background-color: transparent  !important;
+    opacity: 100;
+    width: 110%;
+    margin-top: -1%;
+
+}
+
+.saldo-label {
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.saldo-value {
+  font-size: 20px;
+}
+
+ion-item {
+  transition: transform 0.3s;
+}
+
+ion-item:hover {
+  transform: scale(1.1);
+}
+
+ion-card {
+  .custom-list {
+    overflow-y: scroll; /* Habilita el scroll vertical */
+    padding: 10px; /* Espacio interno de la lista */
+  }
+}
+.texto-ingreso {
+  color: green;
+}
+
+.texto-egreso {
+  color: red;
+}

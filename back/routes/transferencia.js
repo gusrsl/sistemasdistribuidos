@@ -1,0 +1,10 @@
+const express = require('express');
+const TransferenciaController = require('../controllers/TransferenciaController');
+const protect = require('../middleware/authenticate');
+const api = express.Router();
+api.post('/registrar', protect, TransferenciaController.createTransferencia);
+api.get('/transferencias', protect, TransferenciaController.getTransferencias);
+api.get('/transferenciasRealizadas', protect, TransferenciaController.getTransferenciasRealizadas);
+api.get('/transferenciasRecibidas', protect, TransferenciaController.getTransferenciasRecibidas);
+api.delete('/eliminarTransferencia/:id', protect, TransferenciaController.deleteTransferencia);
+module.exports = api;

@@ -1,0 +1,42 @@
+ion-toolbar {
+    --background: var(--primary-color);
+    --color: #fff;
+    --border-color: var(--primary-color);
+    --text-color: #fff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+ion-menu-button {
+    --color: #ffffff;
+    margin: auto;
+}
+
+ion-icon.notifications-circle-outline {
+    --color: #ffffff;
+    margin: auto;
+}
+
+
+//Logo
+
+// ion-footer {
+//     ion-toolbar {
+//       ion-buttons[slot='end'] {
+//         ion-button {
+//           --padding-start: 0;
+//         }
+  
+//         ion-icon {
+//           font-size: 24px;
+//           color: white;
+//         }
+//       }
+//     }
+//   }
+
+.example-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}

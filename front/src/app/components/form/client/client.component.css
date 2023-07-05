@@ -1,0 +1,9 @@
+ion-label {
+  color: var(--primary-color) !important;
+}
+
+ion-item .item-native {
+  padding: 0 !important;
+  -webkit-padding-start: 0 !important;
+          padding-inline-start: 0 !important;
+}/*# sourceMappingURL=client.component.css.map */

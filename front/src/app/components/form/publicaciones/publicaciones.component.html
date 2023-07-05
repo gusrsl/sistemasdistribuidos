@@ -1,0 +1,42 @@
+<app-header [datos]="this.datos"></app-header>
+
+<ion-content>
+
+	<form [formGroup]="reservaForm" style="padding-left: 10px; padding-right: 10px">
+		<ion-grid fixed>
+	
+			<ion-row>
+			
+				<ion-col size="12">
+					<ion-item>
+						<ion-label class="font-w" position="floating">Titulo: <span class="txt-danger">*</span></ion-label>
+						<ion-input type="text" placeholder="" formControlName="razon_social"></ion-input>
+					</ion-item>
+				</ion-col>
+
+				
+				<ion-col size="12">
+					<ion-item>
+						<ion-textarea label="Solid textarea" labelPlacement="floating" fill="solid" placeholder="Descripción"></ion-textarea>
+					</ion-item>
+				</ion-col>
+
+				<ion-col size="12">
+					<ion-item>
+						<ion-label>Agregar Imagenes</ion-label>
+					</ion-item>
+				</ion-col>
+
+				<ion-card>
+					<img alt="Silhouette of mountains" src="https://cdn.icon-icons.com/icons2/564/PNG/512/Add_Image_icon-icons.com_54218.png" />
+				  </ion-card>
+
+				<ion-col size="12">
+					<ion-button type="submit" expand="block" fill="clear" [disabled]="!reservaForm.valid" class=" btn btn-primary">Guardar</ion-button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</form>
+
+</ion-content>]
+

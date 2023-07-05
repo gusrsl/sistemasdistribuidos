@@ -1,0 +1,143 @@
+<app-header [datos]="this.datos"></app-header>
+
+<ion-content [fullscreen]="true" mode="ios">
+
+	<ion-card (click)="perfil()">
+
+		<!-- <ion-card-header>
+		  <ion-card-title>Hola, Beji Gonzalez</ion-card-title>
+		  <ion-card-subtitle>Residente</ion-card-subtitle>
+		</ion-card-header> -->
+
+		<ion-grid>
+
+			<ion-row>
+				<ion-col size="9" ><ion-card-title >Hola, {{informacion?.nombres}} {{informacion?.apellidos}}</ion-card-title>
+					<ion-card-subtitle>Cuenta de Debito</ion-card-subtitle></ion-col>
+				<ion-col size="1">
+					<ion-avatar class="av-home" >
+						<img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+					</ion-avatar>
+
+				</ion-col>
+			  </ion-row>
+
+		</ion-grid>
+	  </ion-card>
+
+
+
+	<ion-list lines="none">
+		<ion-list-header class="txt-primary">¿Qué deseas hacer hoy?</ion-list-header>
+		<!-- <ion-card (click)="clients()">
+			<ion-item>
+				<ion-icon name="people" slot="start"></ion-icon>
+				<ion-label>
+					<p>Gestión de</p>
+					<h2>Clientes</h2>
+				</ion-label>
+			</ion-item>
+		</ion-card> -->
+		<ion-card (click)="servicios()">
+			<ion-item>
+				<ion-icon name="cash-outline" slot="start"></ion-icon>				<ion-label>
+					<p>Ingreso de</p>
+					<h2>Efectivo</h2>
+				</ion-label>
+			</ion-item>
+		</ion-card>
+		<ion-card (click)="reservas()">
+			<ion-item>
+				<ion-icon name="card-outline" slot="start"></ion-icon>				<ion-label>
+					<p>Transferencia de</p>
+					<h2>Dinero</h2>
+				</ion-label>
+			</ion-item>
+		</ion-card>
+    <ion-card (click)="sugerencias()">
+			<ion-item>
+				<ion-icon name="wallet-outline" slot="start"></ion-icon>				<ion-label>
+					<p>Retiro</p>
+					<h2>Dinero</h2>
+				</ion-label>
+			</ion-item>
+		</ion-card>
+		<!-- <ion-card (click)="publicaciones()">
+			<ion-item>
+				<ion-icon name="albums-outline" slot="start"></ion-icon>
+				<ion-label>
+					<p>Mira las</p>
+					<h2>Publicaciones</h2>
+				</ion-label>
+			</ion-item>
+		</ion-card> -->
+		<!-- <ion-card (click)="sugerencias()">
+			<ion-item>
+				<ion-icon name="person-add-outline" slot="start"></ion-icon>				<ion-label>
+					<p>Registro de</p>
+					<h2>Usuarios</h2>
+				</ion-label>
+			</ion-item>
+		</ion-card> -->
+			<ion-grid >
+				<ion-row>
+				  <ion-col size="11" style="margin: auto; margin-top: 0%;">
+					<ion-card>
+					  <ion-card-header style="text-align: center;font-size: 150%;color:black">
+						Saldo Disponible
+					  </ion-card-header>
+
+					  <ion-card-content style="text-align: center; font-style: initial;color:black">
+						<div class="saldo-value">${{informacion?.saldo}}</div>
+					  </ion-card-content>
+					</ion-card>
+				  </ion-col>
+				</ion-row>
+			  </ion-grid>
+
+	</ion-list>
+
+	<ion-card style="padding: 20px;">
+		<ion-card-header style="text-align: center; font-size: 24px; font-weight: bold;
+		margin-bottom: 10px;" class="card-title fade-in" [class.show]="transacciones.length > 0">
+		  Transacciones
+		</ion-card-header>
+		<ion-card-content>
+			<div class="list-container" style="max-height: 500px; overflow-y: auto;">
+		  <ion-list class="fade-in" [class.show]="transacciones.length > 0">
+			<ion-item  *ngFor="let transaccion of transacciones" style="transition: transform 0.3s;">
+			  <ion-icon
+  [name]="transaccion.type === 'deposito' ? 'trending-up' : (transaccion.type === 'transferencia' && identity._id === transaccion.de_usuario._id) ? 'trending-down' : 'trending-up'"
+  slot="start"
+></ion-icon>
+        <!-- <span [ngClass]="{'texto-ingreso': transaccion.type === 'deposito', 'texto-egreso': transaccion.type === 'retiro'}">
+          {{ transaccion.type }} - {{ transaccion.monto }}: {{ transaccion.descripcion }}
+        </span> -->
+        <ng-container *ngIf="transaccion.type === 'transferencia'">
+          <span [ngClass]="{'texto-ingreso': identity._id === transaccion.para_usuario._id, 'texto-egreso': identity._id === transaccion.de_usuario._id}">
+            {{ transaccion.type }} - {{ transaccion.monto }}: {{ transaccion.descripcion }}:
+            {{ transaccion.de_usuario.nombres }} - {{ transaccion.para_usuario.nombres }}
+          </span>
+        </ng-container>
+        <ng-container *ngIf="transaccion.type !== 'transferencia'">
+          <span [ngClass]="{'texto-ingreso': transaccion.type === 'deposito', 'texto-egreso': transaccion.type === 'retiro'}">
+            {{ transaccion.type }} - {{ transaccion.monto }}: {{ transaccion.descripcion }}
+          </span>
+        </ng-container>
+			</ion-item>
+		  </ion-list>
+		</div>
+		</ion-card-content>
+	  </ion-card>
+
+
+
+	<ion-img class="banner-head" src="https://i.postimg.cc/mDf6Nx5Y/footer-banner.png"></ion-img>
+
+</ion-content>
+
+
+
+<!-- En el menú se deben reflejar las
+accione del home, y en footer el
+logo con version de la app -->
